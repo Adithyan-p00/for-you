@@ -29,36 +29,17 @@
       width: 100%;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-      animation: pop 0.6s ease;
-    }
-
-    @keyframes pop {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
     }
 
     .cat {
       width: 120px;
       margin-bottom: 12px;
-      animation: float 2.5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
     }
 
     .text {
       font-size: 17px;
       line-height: 1.6;
-      color: #333;
       margin-bottom: 22px;
-    }
-
-    .highlight {
-      color: #ff4d88;
-      font-weight: 600;
     }
 
     button {
@@ -67,31 +48,22 @@
       color: white;
       padding: 12px 22px;
       border-radius: 999px;
-      font-size: 15px;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(255,77,136,0.35);
-    }
-
-    @media (max-width: 480px) {
-      .cat { width: 96px; }
-      .text { font-size: 16px; }
-      button { width: 100%; padding: 14px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" src="song.mp3" loop></audio>
+  <audio id="bgMusic" src="/song.mp3" loop></audio>
 
   <div class="card">
-    <!-- ✅ FIXED IMAGE PATH -->
-    <img src="for you/sticker1.png" alt="cute cat sticker" class="cat" />
+    <!-- 🔥 ABSOLUTE PATH -->
+    <img src="/to her/sticker1.png" alt="cute cat sticker" class="cat" />
 
     <div class="text">
-      <span class="highlight">Enikk ariyam</span>… you wouldn’t ignore me 😌<br />
-      <span class="highlight">baaki ellaarum</span> entha paranjalum,<br />
+      Enikk ariyam… you wouldn’t ignore me 😌<br />
+      baaki ellaarum entha paranjalum,<br />
       I don’t care 
     </div>
 
@@ -99,18 +71,14 @@
   </div>
 
   <script>
-    const music = document.getElementById("bgMusic");
-
     function nextPage() {
-      music.play().then(() => {
-        localStorage.setItem("musicPlaying", "true");
-        // ✅ FIXED PAGE PATH
-        window.location.href = "for you/page2.html";
-      }).catch(() => {
-        window.location.href = "for you/page2.html";
-      });
+      document.getElementById("bgMusic").play().catch(()=>{});
+      localStorage.setItem("musicPlaying", "true");
+      // 🔥 ABSOLUTE PATH
+      window.location.href = "/to her/page2.html";
     }
   </script>
 
 </body>
 </html>
+
