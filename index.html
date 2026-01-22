@@ -86,7 +86,8 @@
   <audio id="bgMusic" src="song.mp3" loop></audio>
 
   <div class="card">
-    <img src="./for-you/sticker1.png" alt="cute cat sticker" class="cat" />
+    <!-- ✅ FIXED IMAGE PATH -->
+    <img src="for you/sticker1.png" alt="cute cat sticker" class="cat" />
 
     <div class="text">
       <span class="highlight">Enikk ariyam</span>… you wouldn’t ignore me 😌<br />
@@ -101,12 +102,12 @@
     const music = document.getElementById("bgMusic");
 
     function nextPage() {
-      // Required user interaction to start music (mobile-safe)
       music.play().then(() => {
         localStorage.setItem("musicPlaying", "true");
-        window.location.href = "page2.html";
+        // ✅ FIXED PAGE PATH
+        window.location.href = "for you/page2.html";
       }).catch(() => {
-        window.location.href = "page2.html";
+        window.location.href = "for you/page2.html";
       });
     }
   </script>
